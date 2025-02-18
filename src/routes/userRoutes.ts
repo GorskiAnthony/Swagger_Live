@@ -1,14 +1,22 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 
 const router = Router();
 
-router.get("/users", (req: Request, res: Response) => {
-	const users = [
-		{ id: 1, name: "John Doe" },
-		{ id: 2, name: "Jane Doe" },
-		{ id: 3, name: "Alice Smith" },
-	];
-	res.json(users);
-});
+import userControllers from "../controllers/userControllers";
+
+// B
+router.get("/users", userControllers.browse);
+
+// R
+router.get("/users/:id", userControllers.read);
+
+// E
+router.put("/users/:id", userControllers.edit);
+
+// A
+router.post("/users", userControllers.post);
+
+// D
+router.delete("/users/:id", userControllers.destroy);
 
 export default router;
