@@ -1,5 +1,6 @@
 {
-	"name": "model_ts",
+	"name": "test-swagger",
+  "title": "Test de Swagger",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
